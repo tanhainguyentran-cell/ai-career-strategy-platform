@@ -1,0 +1,133 @@
+export default function AIStrategicOrbit() {
+  return (
+    <div
+      className="
+        relative
+        overflow-hidden
+        rounded-[48px]
+        border
+        border-zinc-800
+        bg-black
+        p-12
+        flex
+        items-center
+        justify-center
+        min-h-[520px]
+      "
+    >
+
+      <div
+        className="
+          absolute
+          inset-0
+          bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.05),transparent_55%)]
+        "
+      />
+
+      <div
+        className="
+          absolute
+          w-[420px]
+          h-[420px]
+          rounded-full
+          border
+          border-zinc-800
+        "
+      />
+
+      <div
+        className="
+          absolute
+          w-[280px]
+          h-[280px]
+          rounded-full
+          border
+          border-zinc-800
+        "
+      />
+
+      <div
+        className="
+          absolute
+          w-[140px]
+          h-[140px]
+          rounded-full
+          border
+          border-zinc-700
+        "
+      />
+
+      <div
+        className="
+          relative
+          z-10
+          flex
+          items-center
+          justify-center
+          w-24
+          h-24
+          rounded-full
+          bg-white
+          text-black
+          font-black
+          text-lg
+        "
+      >
+        AI
+      </div>
+
+      <div
+        className="
+          absolute
+          top-[18%]
+          left-1/2
+          -translate-x-1/2
+          w-5
+          h-5
+          rounded-full
+          bg-white
+        "
+      />
+
+      <div
+        className="
+          absolute
+          bottom-[18%]
+          left-1/2
+          -translate-x-1/2
+          w-5
+          h-5
+          rounded-full
+          bg-white
+        "
+      />
+
+      <div
+        className="
+          absolute
+          left-[18%]
+          top-1/2
+          -translate-y-1/2
+          w-5
+          h-5
+          rounded-full
+          bg-white
+        "
+      />
+
+      <div
+        className="
+          absolute
+          right-[18%]
+          top-1/2
+          -translate-y-1/2
+          w-5
+          h-5
+          rounded-full
+          bg-white
+        "
+      />
+
+    </div>
+  );
+}

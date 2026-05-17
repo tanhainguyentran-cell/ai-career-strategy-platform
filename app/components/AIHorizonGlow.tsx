@@ -1,0 +1,41 @@
+export default function AIHorizonGlow() {
+  return (
+    <div
+      className="
+        fixed
+        bottom-0
+        left-0
+        w-full
+        h-[240px]
+        pointer-events-none
+        z-[1]
+        overflow-hidden
+      "
+    >
+      <div
+        className="
+          absolute
+          bottom-[-80px]
+          left-1/2
+          -translate-x-1/2
+          w-[1200px]
+          h-[300px]
+          rounded-full
+          bg-white/[0.03]
+          blur-[120px]
+        "
+      />
+
+      <div
+        className="
+          absolute
+          bottom-0
+          left-0
+          w-full
+          h-[1px]
+          bg-white/[0.08]
+        "
+      />
+    </div>
+  );
+}
