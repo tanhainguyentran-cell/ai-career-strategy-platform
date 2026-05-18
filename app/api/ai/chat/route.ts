@@ -15,7 +15,7 @@ export async function POST(
 
     const response =
       await fetch(
-        "http://localhost:11434/api/generate",
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${process.env.GEMINI_API_KEY}`,
         {
           method: "POST",
 
@@ -25,10 +25,11 @@ export async function POST(
           },
 
           body: JSON.stringify({
-            model:
-              "llama3.1:8b",
-
-            prompt: `
+            contents: [
+              {
+                parts: [
+                  {
+                    text: `
 You are an elite AI career strategist.
 
 Context:
@@ -43,9 +44,11 @@ Provide:
 - execution plans
 - career positioning
 - AI-native thinking
-            `,
-
-            stream: false,
+                    `,
+                  },
+                ],
+              },
+            ],
           }),
         }
       );
@@ -53,21 +56,20 @@ Provide:
     const data =
       await response.json();
 
-    console.log(data);
+    const text =
+      data?.candidates?.[0]?.content
+        ?.parts?.[0]?.text ||
+      "No AI response generated.";
 
-    console.log(data);
-
-return NextResponse.json({
-  response:
-    data.response ||
-    JSON.stringify(data),
-});
+    return NextResponse.json({
+      response: text,
+    });
   } catch (error) {
     console.error(error);
 
     return NextResponse.json({
       response:
-        "Ollama AI request failed.",
+        "Gemini AI request failed.",
     });
   }
 }
